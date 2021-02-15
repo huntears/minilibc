@@ -27,7 +27,7 @@ re:	fclean all ## Force clean then compile
 
 tests_run: CFLAGS += --coverage ## Launch tests
 tests_run: $(OBJ) $(TEST_OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(TEST_OBJ) -o $(TARGET_TEST) $(TEST_LFLAGS)
+	$(CC) $(CFLAGS) $(TEST_OBJ) -o $(TARGET_TEST) $(TEST_LFLAGS)
 	./$(TARGET_TEST)
 	gcovr --exclude tests/
 	gcovr --branches --exclude tests/

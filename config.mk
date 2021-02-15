@@ -4,6 +4,8 @@ OBJ 		=	$(SRC:.S=.o)
 
 LDFLAGS		=	-shared
 
+CFLAGS		=	-I./include/ -W -Wall -Wextra
+
 TEST_SRC	=	tests/tests_test.c		\
 
 TEST_OBJ	=	$(TEST_SRC:.c=.o)
