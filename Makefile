@@ -1,0 +1,40 @@
+##
+## EPITECH PROJECT, 2021
+## asm
+## File description:
+## Makefile
+##
+
+include config.mk
+
+#-------------------------------------------------------------------------------
+
+all:	$(TARGET) ## Build the main binary
+
+$(TARGET): $(OBJ)
+	$(LD) $(LDFLAGS) $(OBJ) -o $(TARGET)
+
+%.o : %.S ## Compile the objects
+	nasm -f elf64 $< -o $@
+
+clean: ## Clean the project
+	rm -f $(OBJ) $(COVERAGE) $(TEST_OBJ)
+
+fclean: clean ## Force clean the project
+	rm -f $(TARGET) $(TARGET_TEST)
+
+re:	fclean all ## Force clean then compile
+
+tests_run: CFLAGS += --coverage ## Launch tests
+tests_run: $(OBJ) $(TEST_OBJ)
+	$(CC) $(CFLAGS) $(OBJ) $(TEST_OBJ) -o $(TARGET_TEST) $(TEST_LFLAGS)
+	./$(TARGET_TEST)
+	gcovr --exclude tests/
+	gcovr --branches --exclude tests/
+
+re_tests: fclean tests_run ## Force clean then launch tests
+
+help: ## Help for the Makefile
+	@cat $(MAKEFILE_LIST) | sed -En 's/^([a-zA-Z_-]+)\s*:.*##\s?(.*)/\1 "\2"/p' | xargs printf "\033[36m%-30s\033[0m %s\n"
+
+.PHONY:	re fclean clean fclean_lib clean_lib build build_lib all tests_run re_tests help valgrind
