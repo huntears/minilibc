@@ -36,4 +36,4 @@ re_tests: fclean tests_run ## Force clean then launch tests
 help: ## Help for the Makefile
 	@cat $(MAKEFILE_LIST) | sed -En 's/^([a-zA-Z_-]+)\s*:.*##\s?(.*)/\1 "\2"/p' | xargs printf "\033[36m%-30s\033[0m %s\n"
 
-.PHONY:	re fclean clean fclean_lib clean_lib build build_lib all tests_run re_tests help valgrind
+.PHONY:	re fclean clean build all tests_run re_tests help valgrind
