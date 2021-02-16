@@ -26,11 +26,10 @@ fclean: clean ## Force clean the project
 re:	fclean all ## Force clean then compile
 
 tests_run: CFLAGS += --coverage ## Launch tests
-tests_run: $(OBJ) $(TEST_OBJ)
+tests_run: all $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(TEST_OBJ) -o $(TARGET_TEST) $(TEST_LFLAGS)
 	./$(TARGET_TEST)
-	gcovr --exclude tests/
-	gcovr --branches --exclude tests/
+	LD_PRELOAD=./$(TARGET) ./$(TARGET_TEST)
 
 re_tests: fclean tests_run ## Force clean then launch tests
 
