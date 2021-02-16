@@ -1,4 +1,15 @@
-SRC			=	src/strlen.S			\
+SRC			=	src/memcpy.S			\
+				src/memmove.S			\
+				src/memset.S			\
+				src/rindex.S			\
+				src/strcasecmp.S		\
+				src/strchr.S			\
+				src/strcmp.S			\
+				src/strcspn.S			\
+				src/strlen.S			\
+				src/strncmp.S			\
+				src/strpbrk.S			\
+				src/strstr.S			\
 
 OBJ 		=	$(SRC:.S=.o)
 
