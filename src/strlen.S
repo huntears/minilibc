@@ -4,9 +4,10 @@ global strlen
 ; https://www.aldeid.com/wiki/X86-assembly/Instructions/repne
 section .text
 strlen:
-    mov rcx, -1         ; Put rcx to -1 to prepare for repne, since it increments then test
-    xor eax, eax        ; Put eax to 0, so it repne tests for null bytes
+    xor rcx, rcx        ; Put rcx to 0 to prevent unwanted bytes in return
+    mov ecx, -1         ; Put ecx to -1 to prepare for repne, since it increments then test
+    xor rax, rax        ; Put eax to 0, so it repne tests for null bytes
     repne scasb         ; Scan the string for a null byte, result is stored in rcx
-    dec rcx             ; Decrease the result because repne counts the null byte
-    mov rax, rcx        ; Move the result into rax for 
+    dec ecx             ; Decrease the result because repne counts the null byte
+    mov eax, ecx        ; Move the result into rax for the return
     ret                 ; Return

@@ -5,12 +5,12 @@
 ** main
 */
 
-#include "libasm.h"
-
 #include <stdio.h>
+
+#include "libasm.h"
 
 int main(void)
 {
-    printf("Length of \"Issou\" : %d\n", strlen("Issou"));
+    printf("Length of \"Issou\" : %lu\n", strlen("Issou"));
     return 0;
 }
