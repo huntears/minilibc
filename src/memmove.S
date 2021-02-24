@@ -1,5 +1,5 @@
 global memmove
 
-section .data
+section .text
 memmove:
     ret

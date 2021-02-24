@@ -1,5 +1,5 @@
 global strpbrk
 
-section .data
+section .text
 strpbrk:
     ret

@@ -1,5 +1,5 @@
 global strncmp
 
-section .data
+section .text
 strncmp:
     ret

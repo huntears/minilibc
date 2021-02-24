@@ -1,5 +1,5 @@
 global rindex
 
-section .data
+section .text
 rindex:
     ret

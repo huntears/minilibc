@@ -1,5 +1,5 @@
 global memset
 
-section .data
+section .text
 memset:
     ret

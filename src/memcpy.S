@@ -1,5 +1,5 @@
 global memcpy
 
-section .data
+section .text
 memcpy:
     ret

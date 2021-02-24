@@ -1,5 +1,5 @@
 global strcspn
 
-section .data
+section .text
 strcspn:
     ret

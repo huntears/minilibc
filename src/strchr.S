@@ -1,5 +1,5 @@
 global strchr
 
-section .data
+section .text
 strchr:
     ret

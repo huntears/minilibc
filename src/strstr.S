@@ -1,5 +1,5 @@
 global strstr
 
-section .data
+section .text
 strstr:
     ret

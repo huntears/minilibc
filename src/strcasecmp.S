@@ -1,5 +1,5 @@
 global strcasecmp
 
-section .data
+section .text
 strcasecmp:
     ret
