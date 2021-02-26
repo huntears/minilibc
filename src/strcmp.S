@@ -4,21 +4,21 @@ global strcmp
 ;            rdi,            rsi
 section .text
 strcmp:
-;    xor rbp, rbp
-    xor rax, rax
-;
-;.loop:
-;    mov cl, [rdi+rbp]
-;    mov al, [rsi+rbp]
-;    test cl, cl
-;    jz .end
-;    test al, al
-;    jz .end
-;    cmp cl, al
-;    jne .end
-;    inc rbp
-;    jmp .loop
-;
-;.end:
-;    sub eax, ecx
+    xor rbx, rbx
+    xor eax, eax
+
+.loop:
+    mov cl, [rsi+rbx]
+    mov al, [rdi+rbx]
+    test cl, cl
+    jz .end
+    test al, al
+    jz .end
+    cmp cl, al
+    jne .end
+    inc rbx
+    jmp .loop
+
+.end:
+    sub eax, ecx
     ret

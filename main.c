@@ -26,7 +26,10 @@ int main(void)
 
     printf("memset : %s\n", no);
     
-    int value = strcmp("1", "1");
+    char const value1[] = "1";
+    char const value2[] = "1";
+
+    int value = strcmp(value1, value2);
 
     printf("strcmp : %d\n", value);
 
