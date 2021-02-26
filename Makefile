@@ -23,7 +23,8 @@ clean: ## Clean the project
 fclean: clean ## Force clean the project
 	rm -f $(TARGET) $(TARGET_TEST)
 
-re:	fclean all ## Force clean then compile
+re:	fclean ## Force clean then compile
+	$(MAKE) all
 
 tests_run: CFLAGS += --coverage ## Launch tests
 tests_run: all $(TEST_OBJ)
@@ -31,7 +32,8 @@ tests_run: all $(TEST_OBJ)
 	./$(TARGET_TEST)
 	LD_PRELOAD=./$(TARGET) ./$(TARGET_TEST)
 
-re_tests: fclean tests_run ## Force clean then launch tests
+re_tests: fclean ## Force clean then launch tests
+	$(MAKE) tests_run
 
 help: ## Help for the Makefile
 	@cat $(MAKEFILE_LIST) | sed -En 's/^([a-zA-Z_-]+)\s*:.*##\s?(.*)/\1 "\2"/p' | xargs printf "\033[36m%-30s\033[0m %s\n"
