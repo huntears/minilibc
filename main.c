@@ -26,5 +26,17 @@ int main(void)
 
     printf("memset : %s\n", no);
     
+    int value = strcmp("1", "1");
+
+    printf("strcmp : %d\n", value);
+
+    value = strcmp("11", "1");
+
+    printf("strcmp : %d\n", value);
+
+    value = strcmp("1", "11");
+
+    printf("strcmp : %d\n", value);
+
     return 0;
 }
