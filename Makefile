@@ -15,7 +15,7 @@ $(TARGET): $(OBJ)
 	$(LD) $(LDFLAGS) $(OBJ) -o $(TARGET)
 
 %.o : %.S ## Compile the objects
-	nasm -f elf64 $< -o $@
+	nasm -f elf64 -g $< -o $@
 
 clean: ## Clean the project
 	rm -f $(OBJ) $(COVERAGE) $(TEST_OBJ)
