@@ -43,5 +43,7 @@ int main(void)
 
     printf("rindex : %s\n", rindex(yes, 'm'));
 
+    printf("strpbrk : %s\n", strpbrk(yes, "sye"));
+
     return 0;
 }
