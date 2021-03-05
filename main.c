@@ -41,5 +41,7 @@ int main(void)
 
     printf("strcmp : %d\n", value);
 
+    printf("rindex : %s\n", rindex(yes, 'm'));
+
     return 0;
 }
