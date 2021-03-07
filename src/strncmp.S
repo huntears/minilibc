@@ -5,7 +5,8 @@ global strncmp
 section .text
 strcmp:
     xor rbx, rbx
-    xor eax, eax
+    xor rax, rax
+    xor rcx, rcx
 
 .loop:
     mov cl, [rsi+rbx]
@@ -23,5 +24,5 @@ strcmp:
     jmp .loop
 
 .end:
-    sub eax, ecx
+    sub rax, rcx
     ret
