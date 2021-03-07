@@ -53,5 +53,9 @@ int main(void)
 
     printf("strncmp : %d\n", value);
 
+    value = strcasecmp("mmyes", "MmYeS");
+
+    printf("strcasecmp : %d\n", value);
+
     return 0;
 }
