@@ -4,13 +4,13 @@ global memset
 ;              rdi,     rsi,   rdx
 section .text
 memset:
-    xor rbx, rbx
+    xor rcx, rcx
 
 .loop:
-    cmp rbx, rdx
+    cmp rcx, rdx
     je .end
-    mov [rdi+rbx], sil
-    inc rbx
+    mov [rdi+rcx], sil
+    inc rcx
     jmp .loop
 
 .end:
