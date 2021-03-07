@@ -57,5 +57,9 @@ int main(void)
 
     printf("strcasecmp : %d\n", value);
 
+    value = strcspn("mmyes", "syme");
+
+    printf("strcspn : %d\n", value);
+
     return 0;
 }
