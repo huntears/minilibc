@@ -45,5 +45,13 @@ int main(void)
 
     printf("strpbrk : %s\n", strpbrk(yes, "sye"));
 
+    value = strncmp("1234", "12345", 4);
+
+    printf("strncmp : %d\n", value);
+
+    value = strncmp("1234", "12345", 5);
+
+    printf("strncmp : %d\n", value);
+
     return 0;
 }
