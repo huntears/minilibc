@@ -41,4 +41,4 @@ strstr:
 
 ; If someone sees this, I want you to know that putting all of those fucking
 ; comments in this project made me want to die, and I hope people understand
-; that a good code should need comments every fucking where
+; that a good code shouldn't need comments every fucking where
