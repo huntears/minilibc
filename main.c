@@ -22,9 +22,9 @@ int main(void)
 
     printf("memmove : %s\n", no);
 
-    memset(no, 'A', 3);
+    //memset(no, 'A', 3);
 
-    printf("memset : %s\n", no);
+    //printf("memset : %s\n", no);
     
     char const value1[] = "1";
     char const value2[] = "1";
@@ -60,6 +60,13 @@ int main(void)
     value = strcspn("mmyes", "syme");
 
     printf("strcspn : %d\n", value);
+
+    char const haystack[] = "je suis une personne, j'imagine...";
+    char const needle[] = "personne";
+
+    char *result = strstr(haystack, needle);
+
+    printf("strstr : %s\n", result);
 
     return 0;
 }

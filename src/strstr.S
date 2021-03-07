@@ -14,6 +14,7 @@ strstr:
 
 .loop_needle:
     mov r9b, [rsi+rbx]
+    mov r8b, [rdi+rcx]
     cmp r8b, r9b
     jne .continue_loop
     inc rbx
@@ -35,4 +36,5 @@ strstr:
     mov rax, rcx
     sub rax, rbx
     inc rax
+    add rax, rdi
     ret
